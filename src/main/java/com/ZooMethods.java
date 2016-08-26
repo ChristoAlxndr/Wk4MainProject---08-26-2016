@@ -117,12 +117,12 @@ public class ZooMethods {
 		
 		Scanner scan = new Scanner(System.in);
 		
-		Animals animalToDeleteID = new Animals();
+		Animals animalID = new Animals();
 		
 		System.out.println("What is the animal's ID #?");
-		animalToDeleteID.setAnimalID(scan.nextLine());
+		animalID.setAnimalID(scan.nextLine());
 		
-		return animalToDeleteID;
+		return animalID;
 	}
 
 	private static String deleteByID = "DELETE FROM `xanderzoo`.`zooanimals`" + "WHERE animal_ID=?";
@@ -185,4 +185,72 @@ public class ZooMethods {
 		return animalToAdd;
 
 	}
+	
+	
+	
+	public static void updateByID() {
+		
+		Animals animalToUpdate = new Animals();
+		
+		animalToUpdate = aboutTheAnimalUpdate();
+		
+		connectToDB();
+		
+		try {
+			PREP_STMT = CONN.prepareStatement(updateByID);
+			
+			PREP_STMT.setString(1, animalToUpdate.getSpecies());
+			PREP_STMT.setString(2, animalToUpdate.getAnimalName());
+			PREP_STMT.setString(3, animalToUpdate.getHabitat());
+			PREP_STMT.setString(4, animalToUpdate.getDiet());
+			PREP_STMT.setDouble(5, animalToUpdate.getWeight());
+			PREP_STMT.setInt(6, animalToUpdate.getAge());
+			PREP_STMT.setInt(7, Integer.parseInt(animalToUpdate.getAnimalID()));
+
+			PREP_STMT.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		System.out.println("\n\n");
+		readFromDB();
+	}
+	
+	
+	private static String updateByID = "UPDATE `xanderzoo`.`zooanimals`" + 
+			"SET species=?, name=?, habitat=?, diet=?, weight=?, age=? WHERE animal_ID=?";
+	
+	
+	private static Animals aboutTheAnimalUpdate() {
+
+		Scanner scan = new Scanner(System.in);
+
+		Animals animalToUpdate = new Animals();
+		
+		System.out.println("What is the animal's ID to update?");
+		animalToUpdate.setAnimalID(scan.nextLine());
+
+		System.out.println("What is the animal's species?");
+		animalToUpdate.setSpecies(scan.nextLine());
+
+		System.out.println("What is the animal's name?");
+		animalToUpdate.setAnimalName(scan.nextLine());
+
+		System.out.println("What is the animal's habitat?");
+		animalToUpdate.setHabitat(scan.nextLine());
+
+		System.out.println("What is the animal's diet?");
+		animalToUpdate.setDiet(scan.nextLine());
+
+		System.out.println("What is the animal's weight?");
+		animalToUpdate.setWeight(Double.parseDouble(scan.nextLine()));
+
+		System.out.println("What is the animal's age?");
+		animalToUpdate.setAge(Integer.parseInt(scan.nextLine()));
+
+		return animalToUpdate;
+
+	}
+	
 }

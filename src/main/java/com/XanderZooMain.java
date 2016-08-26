@@ -17,7 +17,8 @@ public class XanderZooMain {
 			System.out.println("Press 1 to read from the animal list from the database \n" + 
 					"Press 2 to add an animal to the database \n" + 
 					"Press 3 to delete an animal from the database with the animal's full info \n" +
-					"Press 4 to delete by the animal's ID #");
+					"Press 4 to delete by the animal's ID # \n" +
+					"Press 5 to update the animal's information.");
 			userInput = scan.nextLine();
 			
 			switch (userInput) {
@@ -35,6 +36,10 @@ public class XanderZooMain {
 				
 			case "4":
 				ZooMethods.deleteByID();
+				break;
+				
+			case "5":
+				ZooMethods.updateByID();
 				break;
 
 			default:
