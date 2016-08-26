@@ -1,0 +1,94 @@
+@CHARSET "ISO-8859-1";
+body {
+	background-image: url("LeopardPrintBackground.png");
+}
+
+p {
+	font-size: 1.5em;
+}
+
+table {
+	font-size: 1.25em;
+	margin: 1em;
+}
+
+table, th, td {
+	border: .25em solid black;
+}
+
+ul.topnav {
+	list-style-type: none;
+	margin: 0em;
+	padding: 0em;
+	overflow: hidden;
+	background-color: #333;
+}
+
+ul.topnav li {
+	float: right;
+}
+
+ul.topnav li a {
+	display: inline-block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 1em 1em;
+	text-decoration: none;
+	transition: 0.3s;
+	font-size: 1em;
+}
+
+ul.topnav li a:hover {
+	background-color: #555
+}
+
+ul.topnav li.icon {
+	display: none;
+}
+
+header {
+	text-align: center;
+	text-size: 2em;
+}
+
+#animalList {
+	float: left;
+}
+
+#kitty {
+	float: center;
+	height: 20em;
+	width: 27em;
+	margin-left: 7em;
+	margin-right: 7em;
+}
+
+#caption {
+	text-align: left;
+	font-size: .75em;
+	font-family: arial;
+}
+
+#caption2 {
+	text-align: right;
+	font-size: .75em;
+	font-family: arial;
+}
+
+#macaw {
+	float: right;
+	height: 15em;
+	width: 15em;
+}
+
+#footerText {
+	text-align: left;
+	font-size: .75em;
+	font-family: arial;
+}
+
+#zoologo {
+	float: center;
+	height: 15em;
+	width: 20em;
+}
