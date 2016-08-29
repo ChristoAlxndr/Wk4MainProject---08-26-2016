@@ -46,9 +46,23 @@ ul.topnav li.icon {
 	display: none;
 }
 
+.form-inline{
+	float: right;
+}
+
+#rememberMe {
+	font-size: 1em;
+}
+
 header {
 	text-align: center;
 	text-size: 2em;
+}
+
+#fundraising {
+	color: red;
+	text-align: center;
+	border-style: double;
 }
 
 #animalList {
@@ -56,23 +70,11 @@ header {
 }
 
 #kitty {
-	float: center;
+	float: left;
 	height: 20em;
 	width: 27em;
 	margin-left: 7em;
 	margin-right: 7em;
-}
-
-#caption {
-	text-align: left;
-	font-size: .75em;
-	font-family: arial;
-}
-
-#caption2 {
-	text-align: right;
-	font-size: .75em;
-	font-family: arial;
 }
 
 #macaw {
@@ -81,14 +83,29 @@ header {
 	width: 15em;
 }
 
+#caption {
+	text-align: center;
+	font-size: 1em;
+	font-family: arial;
+}
+
 #footerText {
 	text-align: left;
 	font-size: .75em;
 	font-family: arial;
 }
 
+#address {
+	float: left;
+	font-size: 2em;
+}
+
 #zoologo {
-	float: center;
+	float: right;
 	height: 15em;
 	width: 20em;
+}
+
+#employeeLogin {
+	float: left;
 }
